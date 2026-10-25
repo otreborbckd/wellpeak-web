@@ -5,9 +5,9 @@ After=network.target
 [Service]
 Type=simple
 User=wellpeak
-WorkingDirectory=/opt/wellpeak-contacto
+WorkingDirectory=/srv/wellpeak/servidor
 EnvironmentFile=/etc/wellpeak/contacto.env
-ExecStart=/usr/bin/node /opt/wellpeak-contacto/contacto.js
+ExecStart=/usr/bin/node /srv/wellpeak/servidor/contacto.js
 Restart=on-failure
 RestartSec=5
 NoNewPrivileges=true
