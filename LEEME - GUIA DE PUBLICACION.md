@@ -14,7 +14,7 @@ Esta guía es para la persona que administra el servidor de AWS. Arquitectura ac
 | `assets/js/config.js` | **Único archivo que se edita** para teléfono, correo, WhatsApp, redes y ligas de descarga. |
 | `assets/css`, `assets/js/sitio.js`, `assets/img` | Diseño, funcionamiento e imágenes. No es necesario tocarlos. |
 | `robots.txt`, `sitemap.xml` | Para buscadores. |
-| `descargas/` | Los 3 PDF que se suben a S3. |
+| `descargas/` | Copia local de los 3 PDF. Ya están en `s3://pulse-wellpeak-recursos/descargas/` y el sitio los consume desde ahí; **no se suben a EC2**. Solo se usa para reemplazar un PDF. |
 | `servidor/` | Servicio del formulario (`contacto.js`), configuración de Nginx, servicio de systemd y variables de ejemplo. |
 | `publicar.sh` | Script para publicar cambios y guardar respaldo en S3. |
 
@@ -68,12 +68,12 @@ sudo nginx -t && sudo systemctl reload nginx
     "Effect": "Allow",
     "Principal": "*",
     "Action": "s3:GetObject",
-    "Resource": "arn:aws:s3:::NOMBRE-DEL-BUCKET/descargas/*"
+    "Resource": "arn:aws:s3:::pulse-wellpeak-recursos/descargas/*"
   }]
 }
 ```
 
-4. Copia la URL pública de cada PDF (por ejemplo `https://NOMBRE-DEL-BUCKET.s3.amazonaws.com/descargas/folleto-programas-pulse.pdf`) en `assets/js/config.js`, sección `descargas`. Mientras estén vacías, la sección "Descarga nuestros materiales" no aparece.
+4. Las URL públicas ya están configuradas en `assets/js/config.js`, sección `descargas` (por ejemplo `https://pulse-wellpeak-recursos.s3.amazonaws.com/descargas/folleto-programas-pulse.pdf`). Si se vacían, la sección "Descarga nuestros materiales" no aparece.
 
 `respaldos/` debe permanecer **privado**.
 

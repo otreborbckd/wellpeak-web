@@ -9,7 +9,7 @@ set -euo pipefail
 
 SERVIDOR="ec2-user@IP_O_DNS_DEL_SERVIDOR"   # Usuario y dirección de la instancia EC2
 LLAVE="$HOME/.ssh/wellpeak.pem"             # Llave .pem de la instancia
-BUCKET="s3://NOMBRE-DEL-BUCKET"             # Bucket de S3
+BUCKET="s3://pulse-wellpeak-recursos"       # Bucket de S3
 RUTA_WEB="/var/www/wellpeak"                # Carpeta pública en el servidor
 
 FECHA=$(date +%Y%m%d-%H%M%S)
@@ -21,6 +21,8 @@ rsync -avz --delete -e "ssh -i $LLAVE" \
 echo "2/3 · Guardando copia de esta versión en S3 ($FECHA)..."
 aws s3 sync ./ "$BUCKET/respaldos/sitio-$FECHA/" --exclude "descargas/*" --only-show-errors
 
+# Los PDF se sirven desde s3://pulse-wellpeak-recursos/descargas/.
+# Solo se resincronizan si existe la carpeta local descargas/ (p. ej. al reemplazar un PDF).
 echo "3/3 · Actualizando materiales descargables en S3..."
 if [ -d descargas ]; then
   aws s3 sync ./descargas/ "$BUCKET/descargas/" --content-type application/pdf --only-show-errors

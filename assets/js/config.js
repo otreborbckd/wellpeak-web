@@ -32,9 +32,9 @@ window.WELLPEAK_CONFIG = {
      Ejemplo: "https://NOMBRE-DEL-BUCKET.s3.amazonaws.com/descargas/folleto-programas-pulse.pdf"
      Mientras estén vacías, la sección de descargas no se muestra. */
   descargas: {
-    folleto:    "",      // descargas/folleto-programas-pulse.pdf
-    proceso:    "",      // descargas/proceso-wellpeak.pdf
-    infografia: ""       // descargas/infografia-proceso-wellpeak.pdf
+    folleto:    "https://pulse-wellpeak-recursos.s3.amazonaws.com/descargas/folleto-programas-pulse.pdf",
+    proceso:    "https://pulse-wellpeak-recursos.s3.amazonaws.com/descargas/proceso-wellpeak.pdf",
+    infografia: "https://pulse-wellpeak-recursos.s3.amazonaws.com/descargas/infografia-proceso-wellpeak.pdf"
   },
 
   /* Formulario de contacto: dirección del servicio en el servidor EC2 */
