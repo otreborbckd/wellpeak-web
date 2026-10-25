@@ -1,0 +1,19 @@
+[Unit]
+Description=WellPeak - formulario de contacto
+After=network.target
+
+[Service]
+Type=simple
+User=wellpeak
+WorkingDirectory=/opt/wellpeak-contacto
+EnvironmentFile=/etc/wellpeak/contacto.env
+ExecStart=/usr/bin/node /opt/wellpeak-contacto/contacto.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

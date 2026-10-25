@@ -1,0 +1,10 @@
+{
+  "name": "wellpeak-contacto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servicio del formulario de contacto de wellpeak.com.mx (Amazon SES)",
+  "main": "contacto.js",
+  "engines": { "node": ">=18" },
+  "scripts": { "start": "node contacto.js", "prueba": "MODO_PRUEBA=1 node contacto.js" },
+  "dependencies": { "@aws-sdk/client-sesv2": "^3.600.0" }
+}
