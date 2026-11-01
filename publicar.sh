@@ -8,7 +8,7 @@
 # =====================================================================
 set -euo pipefail
 
-SERVIDOR="ubuntu@IP_O_DNS_DEL_SERVIDOR"     # Usuario y dirección de la instancia EC2
+SERVIDOR="ubuntu@98.94.177.86"              # Usuario y dirección de la instancia EC2
 LLAVE="$HOME/.ssh/wellpeak.pem"             # Llave .pem de la instancia
 BUCKET="s3://pulse-wellpeak-recursos"       # Bucket de S3
 RUTA_WEB="/srv/wellpeak"                    # Clon del repositorio que sirve Nginx
