@@ -13,18 +13,18 @@ window.WELLPEAK_CONFIG = {
   /* Datos de contacto */
   telefono:   "",        // Ejemplo: "+52 55 1234 5678"
   correo:     "",        // Ejemplo: "contacto@wellpeak.com.mx"
-  whatsapp:   "",        // Solo números con lada de país. Ejemplo: "5215512345678"
+  whatsapp:   "525527360492", // Solo números con lada de país. Ejemplo: "5215512345678"
   direccion:  "",        // Ejemplo: "Ciudad de México, México"
   horario:    "",        // Ejemplo: "Lunes a viernes, 9:00 a 18:00 h"
 
   /* Mensaje que aparece al abrir WhatsApp */
-  mensajeWhatsapp: "Hola, me interesa conocer el proceso WellPeak para mi organización.",
+  mensajeWhatsapp: "Hola WellPeak, me gustaría recibir información",
 
   /* Redes sociales (liga completa) */
   redes: {
-    linkedin:  "",
-    facebook:  "",
-    instagram: "",
+    linkedin:  "https://www.linkedin.com/company/wellpeak/",
+    facebook:  "https://www.facebook.com/wellpeakmexico",
+    instagram: "https://www.instagram.com/wellpeak_mexico/",
     youtube:   ""
   },
 
