@@ -191,6 +191,18 @@ legend{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px}
 .form-msg.ok{color:#2E6B3A}.form-msg.err{color:#B3261E}
 
 /* pie */
+.team-head{text-align:center;margin-bottom:48px}
+.team-head h2{margin-inline:auto}
+.team-sub{font-family:Lora,Georgia,serif;font-style:italic;font-size:19px;color:var(--gold2);max-width:560px;margin:0 auto}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.member{background:var(--ink2);border:1px solid rgba(224,187,108,.14);border-radius:18px;padding:36px 20px 30px;text-align:center;transition:transform .25s,border-color .25s}
+.member:hover{transform:translateY(-4px);border-color:rgba(224,187,108,.45)}
+.member-photo{width:180px;height:180px;margin:0 auto 22px;border-radius:50%;padding:4px;background:linear-gradient(140deg,var(--gold2),var(--gold) 55%,var(--gold3))}
+.member-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--ink2)}
+.member h3{font-size:20px}
+.member-role{margin:8px 0 0;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+.member-quote{margin:16px auto 0;max-width:260px;font-family:Lora,Georgia,serif;font-style:italic;font-size:15px;line-height:1.5;color:#A79E8C}
+.member-quote::before{content:"";display:block;width:28px;height:1px;margin:0 auto 14px;background:rgba(224,187,108,.5)}
 .foot{background:#0E0C09;color:#A79E8C;padding:56px 0 24px}
 .foot-in{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px;align-items:start}
 .foot-logo{height:54px;width:auto;margin-bottom:12px}
@@ -205,7 +217,7 @@ legend{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px}
 /* responsivo */
 @media (max-width:1024px){
   .stats,.evi{grid-template-columns:repeat(2,1fr)}
-  .progs{grid-template-columns:repeat(2,1fr)}
+  .progs,.team{grid-template-columns:repeat(2,1fr)}
   .ptabs{grid-template-columns:repeat(3,1fr)}
   .ppanel{grid-template-columns:1fr}
   .contact{grid-template-columns:1fr}
@@ -220,7 +232,8 @@ legend{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px}
   .hero{padding:64px 0 48px}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .sec{padding:68px 0}
-  .stats,.evi,.pillars3,.ben3,.trust,.downloads,.progs,.row2,.foot-in{grid-template-columns:1fr}
+  .stats,.evi,.pillars3,.ben3,.trust,.downloads,.progs,.team,.row2,.foot-in{grid-template-columns:1fr}
+  .member-photo{width:160px;height:160px}
   .ptabs{grid-template-columns:repeat(2,1fr)}
   .ppanel{padding:24px}
   .form{padding:22px}
